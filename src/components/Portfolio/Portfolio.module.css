@@ -1,0 +1,47 @@
+.container {
+    padding: clamp(60px,9vh,120px) var(--space-page-x);
+}
+
+.headerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: clamp(36px, 5vh, 60px);
+}
+
+.label {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.number {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text);
+}
+
+.name {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: var(--color-text-meta);
+}
+
+.lead {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(52px, 8vw, 120px);
+    line-height: .94;
+    letter-spacing: -.02em;
+}
+
+.right {
+    max-width: 340px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
