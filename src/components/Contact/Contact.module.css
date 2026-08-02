@@ -1,6 +1,6 @@
 .contact {
     padding: clamp(80px, 13vh, 170px) var(--space-page-x);
-    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-top: 1px solid var(--color-border);
 }
 
 .wrapper {
@@ -60,6 +60,12 @@
     border-bottom: 1px solid rgba(255, 255, 255, .18);
     padding-bottom: 8px;
     width: max-content;
+    text-decoration: none;
+    color: var(--color-text-muted);
+
+    &:hover {
+        color: var(--color-text);
+    }
 }
 
 .contactServices {
@@ -74,6 +80,11 @@
         color: inherit;
         text-decoration: none;
     }
+}
+
+.contactService:hover {
+    color: var(--color-text);
+
 }
 
 .contactForm {
@@ -124,8 +135,10 @@
     border: none;
     cursor: pointer;
     padding: 16px 42px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: .14em;
     transition: opacity .3s;
+
+    &:hover { opacity: 0.82 }
 }

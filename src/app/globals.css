@@ -6,6 +6,7 @@
   --color-text-meta: #7f7c74;
   --color-photo-bg: #161616;
   --color-border: rgba(255,255,255,.08);
+  --color-border-secondary: rgba(242, 240, 234, .4);
 
   --space-page-x: clamp(24px, 4vw, 64px);
   --space-page-y: clamp(46px, 8vh, 96px);
@@ -23,6 +24,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {

@@ -11,6 +11,11 @@
     padding: 24px var(--space-page-x);
 }
 
+@media (max-width: 880px) {
+    .wrapper { flex-wrap: wrap; }
+}
+
+
 .left {
     color: var(--color-text);
     text-decoration: none;
@@ -47,6 +52,11 @@
 }
 
 .link {
-    color: #c9c6be;
+    color: var(--color-text-secondary);
     text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--color-text)
+    }
 }

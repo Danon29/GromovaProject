@@ -16,8 +16,12 @@ export function Contact() {
           </h2>
           <p className={styles.lead}>Расскажите про идею съёмки — отвечу в течение дня и пришлю условия.</p>
           <div className={styles.contactList}>
-            <a className={styles.contactLink}>hello@gromova.photo</a>
-            <a className={styles.contactLink}>+7 000 000-00-00</a>
+            <a className={styles.contactLink} href="mailto:hello@gromova.photo">
+              hello@gromova.photo
+            </a>
+            <a className={styles.contactLink} href="tel:+70000000000">
+              +7 000 000-00-00
+            </a>
             <div className={styles.contactServices}>
               <a className={styles.contactService} href="#">
                 Instagram

@@ -1,6 +1,6 @@
 .about {
     padding: clamp(80px, 13vh, 170px) var(--space-page-x);
-    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-top: 1px solid var(--color-border);
 }
 
 .wrapper {
@@ -16,7 +16,7 @@
     position: relative;
     width: 100%;
     height: clamp(420px, 64vh, 660px);
-    background: #161616;
+    background: var(--color-photo-bg);
 }
 
 .label {

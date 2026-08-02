@@ -23,7 +23,7 @@ export function About() {
             честную историю.
           </p>
           <dl className={styles.stats}>
-            <div className="stat">
+            <div>
               <dt className={styles.statName}>4</dt>
               <dd className={styles.statCount}>года опыта</dd>
             </div>
@@ -31,7 +31,7 @@ export function About() {
               <dt className={styles.statName}>300+</dt>
               <dd className={styles.statCount}>съёмок</dd>
             </div>
-            <div className="stat">
+            <div>
               <dt className={styles.statName}>10 000+</dt>
               <dd className={styles.statCount}>кадров в архиве</dd>
             </div>
