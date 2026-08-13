@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Cormorant_Garamond, JetBrains_Mono } from 'next/font/google'
+import { Nav } from '@/components/Nav/Nav'
+import { Footer } from '@/components/Footer/Footer'
 
 const display = Cormorant_Garamond({
   subsets: ['latin', 'cyrillic'],
@@ -18,7 +20,10 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'GROMOVA - фотограф',
+  title: {
+    default: 'GROMOVA — фотограф',
+    template: '%s — GROMOVA',
+  },
   description: 'Фотосессии, сцена и красивые кадры',
 }
 
@@ -29,7 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${display.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
