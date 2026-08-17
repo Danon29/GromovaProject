@@ -53,15 +53,13 @@
     line-height: 1.8;
     color: var(--color-text-secondary);
     max-width: 560px;
+
+    :not(:first-child) {
+        margin-top: 18px;
+    }
 }
 
-.leadSecond {
-    margin-top: 18px;
-    font-size: 17px;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-    max-width: 560px;
-}
+
 
 .stats {
     display: flex;

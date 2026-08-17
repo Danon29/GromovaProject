@@ -1,6 +1,9 @@
 import styles from './About.module.css'
+import { aboutStats } from '@/content/about'
 
 export function About() {
+  const { lead, stats } = aboutStats
+
   return (
     <section id="about" className={styles.about}>
       <div className={styles.wrapper}>
@@ -11,30 +14,21 @@ export function About() {
             <span className={styles.name}>обо мне</span>
           </div>
           <h2 className={styles.speach}>
-            Свет, сцена,
+            Люди, свет,
             <br /> момент
           </h2>
-          <p className={styles.lead}>
-            Я — GROMOVA. 4 года снимаю то, что обычно остаётся за кадром: репетиции, гримёрки, сцену за минуту до
-            выхода. Работаю на концертах и съёмочных площадках, снимаю живые портреты — без постановочной суеты.
-          </p>
-          <p className={styles.leadSecond}>
-            Верю, что лучший кадр рождается, когда человек забывает про камеру. Люблю естественный свет, живую эмоцию и
-            честную историю.
-          </p>
+          {lead.map((item, index) => (
+            <p className={styles.lead} key={index}>
+              {item}
+            </p>
+          ))}
           <dl className={styles.stats}>
-            <div>
-              <dt className={styles.statName}>4</dt>
-              <dd className={styles.statCount}>года опыта</dd>
-            </div>
-            <div>
-              <dt className={styles.statName}>300+</dt>
-              <dd className={styles.statCount}>съёмок</dd>
-            </div>
-            <div>
-              <dt className={styles.statName}>10 000+</dt>
-              <dd className={styles.statCount}>кадров в архиве</dd>
-            </div>
+            {stats.map((item) => (
+              <div key={item.text}>
+                <dt className={styles.statName}>{item.count}</dt>
+                <dd className={styles.statCount}>{item.text}</dd>
+              </div>
+            ))}
           </dl>
         </div>
       </div>

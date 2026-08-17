@@ -9,8 +9,8 @@ export function Nav() {
       </a>
       <ul className={styles.right}>
         <li>
-          <a href="#backstage" className={styles.link}>
-            За кадром
+          <a href="#shoots" className={styles.link}>
+            Съёмки
           </a>
         </li>
         <li>

@@ -1,0 +1,78 @@
+.container {
+    padding: clamp(90px,14vh,180px) var(--space-page-x) clamp(50px,7vh,90px) var(--space-page-x);
+}
+
+.leadGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(28px, 5vw, 64px);
+}
+
+.label {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.number {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text);
+}
+
+.name {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: .12em;
+    color: var(--color-text-meta);
+}
+
+.lead {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(26px, 3.4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -.005em;
+    text-wrap: pretty;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--gap-grid);
+    margin-top: clamp(44px, 7vh, 80px);
+}
+
+.cell {
+    grid-column: span var(--span);
+    height: var(--h);
+    background: var(--color-photo-bg);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 880px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cell {
+        grid-column: 1 / -1;
+    }
+}
+
+.cellLabel {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: #f2f0ea;
+    text-shadow: 0 1px 14px rgba(0,0,0,.7);
+    left: 0;
+    bottom: 0;
+    padding: 14px 16px;
+    pointer-events: none;
+}

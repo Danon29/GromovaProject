@@ -45,3 +45,36 @@
     line-height: 1.7;
     color: var(--color-text-muted);
 }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap-grid);
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-photo-bg);
+    height: clamp(340px, 38vw, 520px);
+}
+
+.cardLabel {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: #f2f0ea;
+    text-shadow: 0 1px 14px rgba(0,0,0,.7);
+    left: 0;
+    bottom: 0;
+    padding: 14px 16px;
+    pointer-events: none;
+}
+
+@media (max-width: 880px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--gap-grid);
+    }
+}

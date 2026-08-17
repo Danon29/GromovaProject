@@ -1,6 +1,9 @@
 import styles from './Contact.module.css'
+import { contact } from '@/content/contact'
 
 export function Contact() {
+  const { contacts, socialNetworks } = contact
+
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.wrapper}>
@@ -16,19 +19,17 @@ export function Contact() {
           </h2>
           <p className={styles.lead}>Расскажите про идею съёмки — отвечу в течение дня и пришлю условия.</p>
           <div className={styles.contactList}>
-            <a className={styles.contactLink} href="mailto:hello@gromova.photo">
-              hello@gromova.photo
-            </a>
-            <a className={styles.contactLink} href="tel:+70000000000">
-              +7 000 000-00-00
-            </a>
+            {contacts.map((c, i) => (
+              <a className={styles.contactLink} href={c.href} key={i}>
+                {c.name}
+              </a>
+            ))}
             <div className={styles.contactServices}>
-              <a className={styles.contactService} href="#">
-                Instagram
-              </a>
-              <a className={styles.contactService} href="#">
-                Telegram
-              </a>
+              {socialNetworks.map((c, i) => (
+                <a className={styles.contactService} href={c.href} key={i}>
+                  {c.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>
