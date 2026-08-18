@@ -1,32 +1,33 @@
 import styles from './Nav.module.css'
+import Link from 'next/link'
 
 export function Nav() {
   return (
     <nav className={styles.wrapper}>
-      <a href="#top" className={styles.left}>
+      <Link href="/#top" className={styles.left}>
         <span className={styles.logo}>GROMOVA</span>
         <span className={styles.photographer}>фотограф</span>
-      </a>
+      </Link>
       <ul className={styles.right}>
         <li>
-          <a href="#shoots" className={styles.link}>
+          <Link href="/#shoots" className={styles.link}>
             Съёмки
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#portfolio" className={styles.link}>
+          <Link href="/#portfolio" className={styles.link}>
             Портфолио
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#about" className={styles.link}>
+          <Link href="/#about" className={styles.link}>
             Обо мне
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#contact" className={styles.link}>
+          <Link href="/#contact" className={styles.link}>
             Контакты
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -1,6 +1,9 @@
 import { getShootBySlug, getShoots } from '@/content'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
+import styles from './page.module.css'
+import Link from 'next/link'
+import { ShootCategoryName } from '@/content/types'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
@@ -9,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!shoot) return { title: 'Съёмка не найдена' }
 
   return {
-    title: `${shoot.title} — GROMOVA`,
+    title: shoot.title,
     description: shoot.description,
   }
 }
@@ -32,12 +35,26 @@ export default async function ShootPage({ params }: Props) {
   }
 
   return (
-    <main>
-      <p>
-        {shoot.location} · {shoot.year}
+    <main className={styles.wrapper}>
+      <p className={styles.location}>
+        {ShootCategoryName[shoot.category]} · {shoot.location} · {shoot.year}
       </p>
-      <h1>{shoot.title}</h1>
-      <p>{shoot.description}</p>
+
+      <h1 className={styles.title}>{shoot.title}</h1>
+      <p className={styles.description}>{shoot.description}</p>
+      <div className={styles.goBack}>
+        <Link href="/#portfolio" className={styles.link}>
+          ← все съёмки
+        </Link>
+      </div>
+
+      <div className={styles.photos}>
+        {shoot.photos.map((photo) => (
+          <div key={photo.src} className={styles.photo}>
+            photo
+          </div>
+        ))}
+      </div>
     </main>
   )
 }

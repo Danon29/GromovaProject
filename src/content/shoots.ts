@@ -62,21 +62,6 @@ export const shoots = [
       photo(thirdDir, 4, 'Много девушек'),
     ],
   },
-  {
-    slug: 'blue-event2',
-    category: 'event',
-    title: 'Вечер в синем 2',
-    year: 2026,
-    location: 'Калининград · Центр города',
-    description: 'Репортаж с мероприятия: девушки на сцене в синем свете, живые эмоции и общие планы зала.',
-    cover: photo(thirdDir, 2, 'Девушка на синем фоне'),
-    photos: [
-      photo(thirdDir, 1, 'Девушка на синем фоне'),
-      photo(thirdDir, 2, 'Две девушки'),
-      photo(thirdDir, 3, 'Девушки смотрят вверх'),
-      photo(thirdDir, 4, 'Много девушек'),
-    ],
-  },
 ] as const satisfies readonly Shoot[]
 
 export type ShootSlug = (typeof shoots)[number]['slug']

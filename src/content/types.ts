@@ -5,6 +5,11 @@ export type Photo = {
 
 export type ShootCategory = 'portrait' | 'event'
 
+export const ShootCategoryName: Record<ShootCategory, string> = {
+  portrait: 'Портрет',
+  event: 'Мероприятие',
+}
+
 export type Shoot = {
   slug: string
   category: ShootCategory
@@ -43,6 +48,4 @@ export type ContactInfo = {
   contacts: readonly Contact[]
 }
 
-export type ShootsInfo = {
-
-}
+export type ShootsInfo = {}

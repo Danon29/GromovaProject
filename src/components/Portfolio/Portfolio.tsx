@@ -1,5 +1,6 @@
 import styles from './Portfolio.module.css'
 import { getShoots } from '@/content'
+import Link from 'next/link'
 
 export function Portfolio() {
   return (
@@ -16,9 +17,9 @@ export function Portfolio() {
       </div>
       <div className={styles.cards}>
         {getShoots().map((shoot) => (
-          <div key={shoot.slug} className={styles.card}>
+          <Link key={shoot.slug} className={styles.card} href={`/shoots/${shoot.slug}`}>
             <div className={styles.cardLabel}>{shoot.title}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
