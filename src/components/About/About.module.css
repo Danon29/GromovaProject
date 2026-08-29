@@ -8,15 +8,24 @@
     grid-template-columns: 1fr;
     gap: clamp(40px, 5vw, 72px);
     align-items: center;
-    max-width: 1340px;
-    margin: 0 auto;
+    max-width: 1340px; margin: 0 auto;
+}
+
+@media (min-width: 880px) {
+    .wrapper {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
 }
 
 .photoWrapper {
     position: relative;
     width: 100%;
-    height: clamp(420px, 64vh, 660px);
+    height: clamp(420px, 70vh, 700px);
     background: var(--color-photo-bg);
+}
+
+.photo {
+    object-fit: cover;
 }
 
 .label {

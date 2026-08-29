@@ -1,9 +1,8 @@
 import { Shoot } from '@/content/types'
+import { photo as photoFrom } from '@/content/photo'
 
-const photo = (dir: string, n: number, alt: string) => ({
-  src: `/photos/${dir}/${String(n).padStart(2, '0')}.jpg`,
-  alt,
-})
+const photo = (dir: string, n: number, alt: string) =>
+  photoFrom(`/photos/${dir}/${String(n).padStart(2, '0')}.jpg`, alt)
 
 const firstDir = 'nadezhda'
 const secondDir = 'nastya'

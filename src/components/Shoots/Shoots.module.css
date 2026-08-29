@@ -39,33 +39,30 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--gap-grid);
     margin-top: clamp(44px, 7vh, 80px);
 }
 
 .cell {
-    grid-column: span var(--span);
     height: var(--h);
     background: var(--color-photo-bg);
     overflow: hidden;
     position: relative;
 }
 
-@media (max-width: 880px) {
+@media (min-width: 880px) {
     .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 
     .cell {
-        grid-column: 1 / -1;
+        grid-column: span var(--span);
     }
 }
 
 .cellLabel {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: .08em;
@@ -75,4 +72,8 @@
     bottom: 0;
     padding: 14px 16px;
     pointer-events: none;
+}
+
+.photo {
+    object-fit: cover;
 }

@@ -1,38 +1,39 @@
 import { BentoItem } from '@/content/types'
+import { photo } from '@/content/photo'
 
 export const bentoItems = [
   {
-    photo: { src: '/photos/portfolio/02.jpg', alt: 'Портрет: Александра' },
+    photo: photo('/photos/portfolio/02.jpg', 'Портрет: Александра'),
     label: 'девушка · Красная площадь',
     span: 4,
     height: 560,
   },
   {
-    photo: { src: '/photos/portfolio/01.jpg', alt: 'Портрет: Валерия' },
+    photo: photo('/photos/portfolio/01.jpg', 'Портрет: Валерия'),
     label: 'портрет · затемнение',
     span: 2,
     height: 560,
   },
   {
-    photo: { src: '/photos/portfolio/03.jpg', alt: 'Саша и лестница' },
+    photo: photo('/photos/portfolio/03.jpg', 'Саша и лестница'),
     label: 'лестница',
     span: 2,
     height: 620,
   },
   {
-    photo: { src: '/photos/portfolio/04.jpg', alt: 'Выступление, две девушки общий план' },
+    photo: photo('/photos/portfolio/04.jpg', 'Выступление, две девушки общий план'),
     label: 'мероприятие',
     span: 4,
     height: 620,
   },
   {
-    photo: { src: '/photos/portfolio/06.jpg', alt: 'Девушки на сцене в синем свете' },
+    photo: photo('/photos/portfolio/06.jpg', 'Девушки на сцене в синем свете'),
     label: 'сцена · девушки',
     span: 4,
     height: 560,
   },
   {
-    photo: { src: '/photos/portfolio/05.jpg', alt: 'Настя на фоне открытого неба' },
+    photo: photo('/photos/portfolio/05.jpg', 'Настя на фоне открытого неба'),
     label: 'девушка · небо',
     span: 2,
     height: 560,

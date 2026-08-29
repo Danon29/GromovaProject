@@ -46,10 +46,17 @@
     color: var(--color-text-muted);
 }
 
+/* Mobile-first: до 880px две колонки, после — четыре (см. CARD_SIZES в Portfolio.tsx) */
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--gap-grid);
+}
+
+@media (min-width: 880px) {
+    .cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 .card {
@@ -72,9 +79,6 @@
     pointer-events: none;
 }
 
-@media (max-width: 880px) {
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--gap-grid);
-    }
+.photo {
+    object-fit: cover;
 }

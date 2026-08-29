@@ -70,3 +70,13 @@
     background: var(--color-text);
     color: var(--color-bg);
 }
+
+.frame {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+}
+
+.photo {
+    object-fit: cover;
+}

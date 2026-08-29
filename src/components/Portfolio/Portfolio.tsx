@@ -1,6 +1,9 @@
 import styles from './Portfolio.module.css'
 import { getShoots } from '@/content'
 import Link from 'next/link'
+import Image from 'next/image'
+
+const CARD_SIZES = '(min-width: 880px) 25vw, 50vw'
 
 export function Portfolio() {
   return (
@@ -18,6 +21,7 @@ export function Portfolio() {
       <div className={styles.cards}>
         {getShoots().map((shoot) => (
           <Link key={shoot.slug} className={styles.card} href={`/shoots/${shoot.slug}`}>
+            <Image src={shoot.cover.src} alt={shoot.cover.alt} sizes={CARD_SIZES} fill className={styles.photo} />
             <div className={styles.cardLabel}>{shoot.title}</div>
           </Link>
         ))}

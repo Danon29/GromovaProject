@@ -1,5 +1,11 @@
+import Image from 'next/image'
 import styles from './Shoots.module.css'
-import { bentoItems, ShootsInfo } from '@/content/bento'
+import { bentoItems, ShootsInfo, type BentoItem } from '@/content'
+
+function bentoSizes(span: BentoItem['span']): string {
+  const wide = Math.ceil((span / 6) * 100)
+  return `(min-width: 880px) ${wide}vw, 100vw`
+}
 
 export function Shoots() {
   return (
@@ -14,6 +20,13 @@ export function Shoots() {
       <div className={styles.grid}>
         {bentoItems.map((item) => (
           <div key={item.photo.src} className={styles.cell} style={{ '--span': item.span, '--h': `${item.height}px` }}>
+            <Image
+              src={item.photo.src}
+              alt={item.photo.alt}
+              fill
+              sizes={bentoSizes(item.span)}
+              className={styles.photo}
+            />
             <span className={styles.cellLabel}>{item.label}</span>
           </div>
         ))}

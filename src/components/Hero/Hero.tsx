@@ -1,6 +1,14 @@
+import Image from 'next/image'
 import styles from './Hero.module.css'
+import { heroSlides } from '@/content/hero'
 
 export function Hero() {
+  const slide = heroSlides[0]
+
+  if (!slide) {
+    return null
+  }
+
   return (
     <header id="top" className={styles.hero}>
       <div className={styles.left}>
@@ -14,6 +22,9 @@ export function Hero() {
             <path d="M1 6h15m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         </button>
+      </div>
+      <div className={styles.frame}>
+        <Image src={slide.src} alt={slide.alt} fill sizes="100vw" preload className={styles.photo} />
       </div>
     </header>
   )
