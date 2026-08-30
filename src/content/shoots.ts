@@ -7,6 +7,8 @@ const photo = (dir: string, n: number, alt: string) =>
 const firstDir = 'nadezhda'
 const secondDir = 'nastya'
 const thirdDir = 'blue-event'
+const fourthDir = 'karina-piter'
+const fifthDir = 'karina-home'
 
 export const shoots = [
   {
@@ -44,6 +46,51 @@ export const shoots = [
       photo(secondDir, 3, 'Настя перед лампой'),
       photo(secondDir, 4, 'Настя в кафе'),
       photo(secondDir, 5, 'Настя в кафе 2'),
+    ],
+  },
+  {
+    slug: 'karina-home',
+    category: 'portrait',
+    title: 'Дома',
+    year: 2024,
+    location: 'Калининград · Дома',
+    description: 'Карина дома.',
+    cover: photo(fifthDir, 1, 'Карина дома'),
+    photos: [
+      photo(fifthDir, 1, 'Карина дома'),
+      photo(fifthDir, 2, 'Карина дома'),
+      photo(fifthDir, 3, 'Карина дома'),
+      photo(fifthDir, 4, 'Карина дома'),
+      photo(fifthDir, 5, 'Карина дома'),
+      photo(fifthDir, 6, 'Карина дома'),
+      photo(fifthDir, 7, 'Карина дома'),
+      photo(fifthDir, 8, 'Карина дома'),
+      photo(fifthDir, 9, 'Карина дома'),
+      photo(fifthDir, 10, 'Карина дома'),
+      photo(fifthDir, 11, 'Карина дома'),
+      photo(fifthDir, 12, 'Карина дома'),
+      photo(fifthDir, 13, 'Карина дома'),
+      photo(fifthDir, 14, 'Карина дома'),
+      photo(fifthDir, 15, 'Карина дома'),
+      photo(fifthDir, 16, 'Карина дома'),
+    ],
+  },
+  {
+    slug: 'karina-piter',
+    category: 'portrait',
+    title: 'Карина Санкт-Петербург',
+    year: 2024,
+    location: 'Санкт-Петербург',
+    description: 'Карина в Санкт-Петербурге',
+    cover: photo(fourthDir, 1, 'Карина'),
+    photos: [
+      photo(fourthDir, 1, 'Карина'),
+      photo(fourthDir, 2, 'Карина'),
+      photo(fourthDir, 3, 'Карина'),
+      photo(fourthDir, 4, 'Карина'),
+      photo(fourthDir, 5, 'Карина'),
+      photo(fourthDir, 6, 'Карина'),
+      photo(fourthDir, 7, 'Карина'),
     ],
   },
   {

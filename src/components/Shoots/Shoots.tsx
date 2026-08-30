@@ -1,25 +1,36 @@
 import Image from 'next/image'
 import styles from './Shoots.module.css'
 import { bentoItems, ShootsInfo, type BentoItem } from '@/content'
+import { Reveal } from '@/components/Reveal/Reveal'
 
 function bentoSizes(span: BentoItem['span']): string {
   const wide = Math.ceil((span / 6) * 100)
   return `(min-width: 880px) ${wide}vw, 100vw`
 }
+// Задержка внутри ряда: на десктопе сетка bento укладывается по 2 ячейки в ряд
+const PER_ROW = 2
+const STAGGER = 120
 
 export function Shoots() {
   return (
     <section id="shoots" className={styles.container}>
-      <div className={styles.leadGrid}>
-        <div className={styles.label}>
-          <span className={styles.number}>01</span>
-          <span className={styles.name}>съёмки / shoots</span>
+      <Reveal>
+        <div className={styles.leadGrid}>
+          <div className={styles.label}>
+            <span className={styles.number}>01</span>
+            <span className={styles.name}>съёмки / shoots</span>
+          </div>
+          <h2 className={styles.lead}>{ShootsInfo.lead}</h2>
         </div>
-        <h2 className={styles.lead}>{ShootsInfo.lead}</h2>
-      </div>
+      </Reveal>
       <div className={styles.grid}>
-        {bentoItems.map((item) => (
-          <div key={item.photo.src} className={styles.cell} style={{ '--span': item.span, '--h': `${item.height}px` }}>
+        {bentoItems.map((item, i) => (
+          <Reveal
+            key={item.photo.src}
+            delay={(i % PER_ROW) * STAGGER}
+            className={styles.cell}
+            style={{ '--span': item.span, '--h': `${item.height}px` }}
+          >
             <Image
               src={item.photo.src}
               alt={item.photo.alt}
@@ -28,7 +39,7 @@ export function Shoots() {
               className={styles.photo}
             />
             <span className={styles.cellLabel}>{item.label}</span>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

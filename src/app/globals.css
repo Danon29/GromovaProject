@@ -12,11 +12,17 @@
   --space-page-y: clamp(46px, 8vh, 96px);
   --gap-grid: clamp(12px, 1.4vw, 20px);
 
+  --nav-height: 84px;
+
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: var(--nav-height);
 }
 
 body {

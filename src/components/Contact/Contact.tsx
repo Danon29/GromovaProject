@@ -1,12 +1,13 @@
 import styles from './Contact.module.css'
 import { contact } from '@/content/contact'
+import { Reveal } from '@/components/Reveal/Reveal'
 
 export function Contact() {
   const { contacts, socialNetworks } = contact
 
   return (
     <section id="contact" className={styles.contact}>
-      <div className={styles.wrapper}>
+      <Reveal className={styles.wrapper}>
         <div>
           <div className={styles.label}>
             <span className={styles.number}>04</span>
@@ -53,7 +54,7 @@ export function Contact() {
             Отправить заявку
           </button>
         </form>
-      </div>
+      </Reveal>
     </section>
   )
 }

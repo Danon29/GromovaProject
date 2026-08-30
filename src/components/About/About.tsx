@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from './About.module.css'
 import { aboutStats } from '@/content/about'
 import portrait from '@/images/about-portrait.jpg'
+import { Reveal } from '@/components/Reveal/Reveal'
 
 const PORTRAIT_SIZES = '(min-width: 880px) 42vw, 90vw'
 
@@ -11,7 +12,7 @@ export function About() {
   return (
     <section id="about" className={styles.about}>
       <div className={styles.wrapper}>
-        <div className={styles.photoWrapper}>
+        <Reveal className={styles.photoWrapper}>
           <Image
             src={portrait}
             alt="Мария Громова"
@@ -20,8 +21,8 @@ export function About() {
             sizes={PORTRAIT_SIZES}
             className={styles.photo}
           />
-        </div>
-        <div>
+        </Reveal>
+        <Reveal>
           <div className={styles.label}>
             <span className={styles.number}>03</span>
             <span className={styles.name}>обо мне</span>
@@ -43,7 +44,7 @@ export function About() {
               </div>
             ))}
           </dl>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

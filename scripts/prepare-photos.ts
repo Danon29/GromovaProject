@@ -2,9 +2,9 @@ import path from 'node:path'
 import { mkdir, readdir, stat, writeFile } from 'node:fs/promises'
 import sharp from 'sharp'
 
-import { bentoItems } from '@/content/bento'
-import { heroSlides } from '@/content/hero'
-import { getShoots } from '@/content'
+// import { bentoItems } from '@/content/bento'
+// import { heroSlides } from '@/content/hero'
+// import { getShoots } from '@/content'
 
 const ROOT = path.join(__dirname, '..')
 const RAW_DIR = path.join(ROOT, 'raw')
@@ -89,7 +89,8 @@ async function processRaw(): Promise<ProcessResult> {
   return result
 }
 
-function contentSrcs(): string[] {
+async function contentSrcs(): Promise<string[]> {
+  const { bentoItems, heroSlides, getShoots } = await import('@/content')
   const all = [
     ...getShoots().flatMap((shoot) => [shoot.cover, ...shoot.photos]),
     ...bentoItems.map((item) => item.photo),
@@ -101,7 +102,7 @@ function contentSrcs(): string[] {
 async function checkContent(): Promise<string[]> {
   const missing: string[] = []
 
-  for (const src of contentSrcs()) {
+  for (const src of await contentSrcs()) {
     const file = path.join(PUBLIC_DIR, src)
     if (!(await statOrNull(file))) missing.push(src)
   }
@@ -138,7 +139,7 @@ async function main() {
     console.error(`missing ${missing.length} file(s) declared in content:`)
     for (const src of missing) console.error(`  ${src}`)
   } else {
-    console.log(`content: all ${contentSrcs().length} paths exist`)
+    console.log(`content: all ${(await contentSrcs()).length} paths exist`)
   }
 
   if (failed > 0 || missing.length > 0) process.exitCode = 1

@@ -1,0 +1,17 @@
+.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :global(html.js) .start:not(.visible) {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    .start {
+        transition:
+                opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1) var(--reveal-delay, 0ms),
+                transform 1s cubic-bezier(0.2, 0.8, 0.2, 1) var(--reveal-delay, 0ms);
+    }
+}
