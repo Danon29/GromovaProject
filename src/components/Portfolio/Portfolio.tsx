@@ -28,7 +28,14 @@ export function Portfolio() {
           <Reveal key={shoot.slug} delay={(i % PER_ROW) * STAGGER}>
             <Link className={styles.card} href={`/shoots/${shoot.slug}`}>
               <Image src={shoot.cover.src} alt={shoot.cover.alt} sizes={CARD_SIZES} fill className={styles.photo} />
-              <div className={styles.cardLabel}>{shoot.title}</div>
+              <div className={styles.cardLabel}>
+                {shoot.title}
+                <span className={styles.arrow} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7M8 7h9v9" />
+                  </svg>
+                </span>
+              </div>
             </Link>
           </Reveal>
         ))}

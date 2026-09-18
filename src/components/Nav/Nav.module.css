@@ -1,15 +1,3 @@
-.wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    padding: 24px var(--space-page-x);
-}
 
 @media (max-width: 880px) {
     .wrapper { flex-wrap: wrap; }

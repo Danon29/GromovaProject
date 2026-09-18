@@ -51,11 +51,11 @@ export const shoots = [
   {
     slug: 'karina-home',
     category: 'portrait',
-    title: 'Дома',
+    title: 'Карина · Дома ',
     year: 2024,
     location: 'Калининград · Дома',
     description: 'Карина дома.',
-    cover: photo(fifthDir, 1, 'Карина дома'),
+    cover: photo(fifthDir, 4, 'Карина дома'),
     photos: [
       photo(fifthDir, 1, 'Карина дома'),
       photo(fifthDir, 2, 'Карина дома'),
@@ -78,10 +78,10 @@ export const shoots = [
   {
     slug: 'karina-piter',
     category: 'portrait',
-    title: 'Карина Санкт-Петербург',
+    title: 'Карина · Санкт-Петербург',
     year: 2024,
     location: 'Санкт-Петербург',
-    description: 'Карина в Санкт-Петербурге',
+    description: 'Карина · Санкт-Петербурге',
     cover: photo(fourthDir, 1, 'Карина'),
     photos: [
       photo(fourthDir, 1, 'Карина'),

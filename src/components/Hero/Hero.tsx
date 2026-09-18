@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './Hero.module.css'
 import { heroSlides } from '@/content/hero'
+import { HeroCarousel } from '@/components/HeroCarousel/hero-carousel'
 
 export function Hero() {
   const slide = heroSlides[0]
@@ -15,17 +16,20 @@ export function Hero() {
         <p className={styles.info}>события · сцена · портрет</p>
         <h1 className={styles.title}>Ловлю то, что остаётся за кадром</h1>
       </div>
-      <div className={styles.right}>
-        <span>01 — 03</span>
-        <button type="button" className={styles.next} aria-label="Следующий кадр">
-          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true">
-            <path d="M1 6h15m0 0-5-5m5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-        </button>
-      </div>
-      <div className={styles.frame}>
-        <Image src={slide.src} alt={slide.alt} fill sizes="100vw" preload className={styles.photo} />
-      </div>
+
+      <HeroCarousel
+        slides={heroSlides.map((slide, i) => (
+          <Image
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            sizes="100vw"
+            priority={i === 0}
+            className={styles.photo}
+          />
+        ))}
+      />
     </header>
   )
 }

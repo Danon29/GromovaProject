@@ -1,9 +1,10 @@
 import styles from './Nav.module.css'
 import Link from 'next/link'
+import { NavShell } from '@/components/NavShell/nav-shell'
 
 export function Nav() {
   return (
-    <nav className={styles.wrapper}>
+    <NavShell>
       <Link href="/#top" className={styles.left}>
         <span className={styles.logo}>GROMOVA</span>
         <span className={styles.photographer}>фотограф</span>
@@ -30,6 +31,6 @@ export function Nav() {
           </Link>
         </li>
       </ul>
-    </nav>
+    </NavShell>
   )
 }

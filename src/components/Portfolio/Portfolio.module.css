@@ -83,3 +83,33 @@
 .photo {
     object-fit: cover;
 }
+
+.arrow {
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: -2px;
+}
+
+.arrow svg {
+    display: block;
+    width: 13px;
+    height: 13px;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .photo {
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .card:hover .photo {
+        transform: scale(1.05);
+    }
+
+    .arrow {
+        transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .card:hover .arrow {
+        transform: translate(3px, -3px);
+    }
+}

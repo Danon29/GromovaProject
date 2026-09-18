@@ -1,0 +1,43 @@
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.active {
+    opacity: 1;
+}
+
+.controls {
+    position: absolute;
+    right: clamp(24px, 4vw, 64px);
+    bottom: clamp(46px, 8vh, 96px);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: rgba(242, 240, 234, 0.8);
+}
+
+.next {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-secondary);
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.next:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
