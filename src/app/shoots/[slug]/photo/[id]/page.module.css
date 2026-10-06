@@ -1,0 +1,25 @@
+.stage {
+    position: relative;
+    height: 100dvh;
+}
+
+.stage img {
+    object-fit: contain;
+    padding: var(--nav-height) var(--space-page-x);
+}
+
+.backLink {
+    position: absolute;
+    left: var(--space-page-x);
+    bottom: 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--color-text);
+    }
+}

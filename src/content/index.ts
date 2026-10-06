@@ -22,3 +22,10 @@ export function getShootByCategory(category: ShootCategory): readonly Shoot[] {
 export function coverOf(shoot: Shoot) {
   return shoot.cover ?? shoot.photos[0] ?? null
 }
+
+export function getShootPhoto(slug: string, id: string) {
+  const shoot = getShootBySlug(slug)
+  const index = Number(id) - 1
+  const photo = shoot?.photos[index]
+  return shoot && photo ? { shoot, photo, index } : undefined
+}

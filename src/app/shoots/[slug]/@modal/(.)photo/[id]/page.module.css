@@ -1,0 +1,20 @@
+.frame {
+    position: relative;
+    aspect-ratio: var(--r);
+    width: min(
+            100vw - 2 * var(--space-page-x),
+            (100dvh - 2 * var(--space-page-x)) * var(--r)
+    );
+    background: var(--color-photo-bg);
+}
+
+.counter {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #7f7c74;
+}
