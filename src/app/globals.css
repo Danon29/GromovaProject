@@ -36,6 +36,12 @@ body {
   &:has(dialog[open]) {
     overflow: hidden;
   }
+
+  @media (max-width: 879px) {
+    &:has(nav[data-open="true"]) {
+      overflow: hidden;
+    }
+  }
 }
 
 

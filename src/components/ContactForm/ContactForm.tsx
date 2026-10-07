@@ -44,7 +44,6 @@ export default function ContactForm() {
       </div>
       <input type="hidden" name="startedAt" ref={startedAtRef} />
       <SubmitButton />
-      resen
     </form>
   )
 }

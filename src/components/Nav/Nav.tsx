@@ -9,7 +9,7 @@ export function Nav() {
         <span className={styles.logo}>GROMOVA</span>
         <span className={styles.photographer}>фотограф</span>
       </Link>
-      <ul className={styles.right}>
+      <ul id="site-menu" className={styles.right}>
         <li>
           <Link href="/#shoots" className={styles.link}>
             Съёмки

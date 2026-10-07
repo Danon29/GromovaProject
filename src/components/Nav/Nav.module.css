@@ -1,10 +1,6 @@
-
-@media (max-width: 880px) {
-    .wrapper { flex-wrap: wrap; }
-}
-
-
 .left {
+    position: relative;
+    z-index: 1;
     color: var(--color-text);
     text-decoration: none;
 
@@ -46,5 +42,49 @@
 
     &:hover {
         color: var(--color-text)
+    }
+}
+
+
+@media (max-width: 879px) {
+    .right {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        padding: calc(var(--nav-height) + 24px) var(--space-page-x) var(--space-page-y);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 8px;
+        background: rgba(11, 11, 12, 0.96);
+        -webkit-backdrop-filter: saturate(140%) blur(16px);
+        backdrop-filter: saturate(140%) blur(16px);
+
+        display: none;
+        opacity: 0;
+        transition:
+                opacity .3s ease,
+                display .3s allow-discrete;
+    }
+
+    nav[data-open="true"] .right {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+            opacity: 0;
+        }
+    }
+
+    .link {
+        display: block;
+        padding: 12px 0; /* тап-зона ≥ 44px */
+        font-family: var(--font-display);
+        font-size: clamp(32px, 9vw, 44px);
+        font-weight: 300;
+        letter-spacing: -.01em;
+        color: var(--color-text);
     }
 }
