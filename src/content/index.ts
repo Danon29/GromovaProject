@@ -4,7 +4,7 @@ import { shoots } from '@/content/shoots'
 export type { Photo, Shoot, ShootCategory, BentoItem } from '@/content/types'
 export { ShootCategoryName } from '@/content/types'
 export { heroSlides } from '@/content/hero'
-export { bentoItems, ShootsInfo } from '@/content/bento'
+export { bentoItems, portfolioInfo } from '@/content/bento'
 export { aboutStats } from '@/content/about'
 
 export function getShoots(): readonly Shoot[] {

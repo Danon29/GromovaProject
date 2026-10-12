@@ -1,44 +1,42 @@
-import Image from 'next/image'
 import styles from './Shoots.module.css'
-import { bentoItems, ShootsInfo, type BentoItem } from '@/content'
+import { getShoots } from '@/content'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Reveal } from '@/components/Reveal/Reveal'
 
-function bentoSizes(span: BentoItem['span']): string {
-  const wide = Math.ceil((span / 6) * 100)
-  return `(min-width: 880px) ${wide}vw, 100vw`
-}
-// Задержка внутри ряда: на десктопе сетка bento укладывается по 2 ячейки в ряд
-const PER_ROW = 2
+const CARD_SIZES = '(min-width: 880px) 25vw, 50vw'
+const PER_ROW = 4
 const STAGGER = 120
 
 export function Shoots() {
   return (
     <section id="shoots" className={styles.container}>
       <Reveal>
-        <div className={styles.leadGrid}>
-          <div className={styles.label}>
-            <span className={styles.number}>01</span>
-            <span className={styles.name}>съёмки / shoots</span>
+        <div className={styles.headerWrapper}>
+          <div className={styles.left}>
+            <div className={styles.label}>
+              <span className={styles.number}>02</span>
+              <span className={styles.name}>съёмки / shoots</span>
+            </div>
+            <h2 className={styles.lead}>Лица</h2>
           </div>
-          <h2 className={styles.lead}>{ShootsInfo.lead}</h2>
+          <p className={styles.right}>Честный характер в кадре, без глянцевой маски</p>
         </div>
       </Reveal>
-      <div className={styles.grid}>
-        {bentoItems.map((item, i) => (
-          <Reveal
-            key={item.photo.src}
-            delay={(i % PER_ROW) * STAGGER}
-            className={styles.cell}
-            style={{ '--span': item.span, '--h': `${item.height}px` }}
-          >
-            <Image
-              src={item.photo.src}
-              alt={item.photo.alt}
-              fill
-              sizes={bentoSizes(item.span)}
-              className={styles.photo}
-            />
-            <span className={styles.cellLabel}>{item.label}</span>
+      <div className={styles.cards}>
+        {getShoots().map((shoot, i) => (
+          <Reveal key={shoot.slug} delay={(i % PER_ROW) * STAGGER}>
+            <Link className={styles.card} href={`/shoots/${shoot.slug}`}>
+              <Image src={shoot.cover.src} alt={shoot.cover.alt} sizes={CARD_SIZES} fill className={styles.photo} />
+              <div className={styles.cardLabel}>
+                {shoot.title}
+                <span className={styles.arrow} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7M8 7h9v9" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           </Reveal>
         ))}
       </div>

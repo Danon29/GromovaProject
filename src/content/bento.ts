@@ -40,7 +40,7 @@ export const bentoItems = [
   },
 ] as const satisfies readonly BentoItem[]
 
-export const ShootsInfo = {
+export const portfolioInfo = {
   lead: 'Каждая съёмка — маленькая история: улицы города, тёплый свет, живые эмоции. Я ловлю кадры, которые захочется пересматривать.',
 } as const satisfies {
   lead: string

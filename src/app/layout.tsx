@@ -3,6 +3,7 @@ import './globals.css'
 import { Cormorant_Garamond, JetBrains_Mono } from 'next/font/google'
 import { Nav } from '@/components/Nav/Nav'
 import { Footer } from '@/components/Footer/Footer'
+import { SITE_URL } from '@/lib/site'
 
 const display = Cormorant_Garamond({
   subsets: ['latin', 'cyrillic'],
@@ -20,11 +21,23 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: '/' },
   title: {
-    default: 'GROMOVA — фотограф',
     template: '%s — GROMOVA',
+    default: 'GROMOVA — фотограф',
   },
-  description: 'Фотосессии, сцена и красивые кадры',
+  description:
+    'Фотограф в Калининграде: портретная и репортажная съёмка людей, мероприятий, концертов и спектаклей. Живые эмоции и естественные кадры.',
+  openGraph: {
+    title: 'GROMOVA — фотограф в Калининграде',
+    description: 'Снимаю людей такими, какие они есть',
+    url: '/',
+    siteName: 'GROMOVA',
+    locale: 'ru-RU',
+    type: 'website',
+    images: ['/opengraph-image.jpg'],
+  },
 }
 
 export default function RootLayout({

@@ -11,13 +11,13 @@ export function Nav() {
       </Link>
       <ul id="site-menu" className={styles.right}>
         <li>
-          <Link href="/#shoots" className={styles.link}>
-            Съёмки
+          <Link href="/#portfolio" className={styles.link}>
+            Портфолио
           </Link>
         </li>
         <li>
-          <Link href="/#portfolio" className={styles.link}>
-            Портфолио
+          <Link href="/#shoots" className={styles.link}>
+            Съёмки
           </Link>
         </li>
         <li>

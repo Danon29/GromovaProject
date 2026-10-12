@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <header id="top" className={styles.hero}>
       <div className={styles.left}>
-        <p className={styles.info}>события · сцена · портрет</p>
+        <p className={styles.info}>Фотограф в Калининграде · портрет · события · сцена</p>
         <h1 className={styles.title}>Ловлю то, что остаётся за кадром</h1>
       </div>
 
