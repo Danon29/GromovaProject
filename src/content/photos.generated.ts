@@ -18,7 +18,7 @@ export const photoDimensions = {
   },
   "/photos/hero/first.jpg": {
     "width": 3000,
-    "height": 1993
+    "height": 2250
   },
   "/photos/hero/second.jpg": {
     "width": 3000,
