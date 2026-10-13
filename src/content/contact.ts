@@ -3,10 +3,6 @@ import { ContactInfo } from '@/content/types'
 export const contact = {
   socialNetworks: [
     {
-      href: 'https://instagram.com/_vyalenaya_vobla_',
-      name: 'Instagram',
-    },
-    {
       href: 'https://t.me/v_vobla',
       name: 'Telegram',
     },
