@@ -43,7 +43,7 @@ export function NavShell({ children }: { children: ReactNode }) {
   return (
     <>
       <div ref={sentinelRef} className={styles.sentinel} aria-hidden="true" />
-      <nav className={className} data-open={open} onClick={handleNavClick}>
+      <nav className={className} data-open={open} data-solid={solid} onClick={handleNavClick}>
         {children}
         <button
           type="button"

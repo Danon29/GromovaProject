@@ -14,10 +14,11 @@ export function Hero() {
     <header id="top" className={styles.hero}>
       <div className={styles.left}>
         <p className={styles.info}>Фотограф в Калининграде · портрет · события · сцена</p>
-        <h1 className={styles.title}>Ловлю то, что остаётся за кадром</h1>
+        <h1 className={styles.title}>Ловлю момент</h1>
       </div>
 
       <HeroCarousel
+        tones={heroSlides.map((slide) => slide.tone)}
         slides={heroSlides.map((slide, i) => (
           <Image
             key={slide.src}

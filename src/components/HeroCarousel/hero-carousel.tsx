@@ -2,18 +2,32 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './hero-carousel.module.css'
+import type { HeroTone } from '@/content/hero'
 
 const AUTO_MS = 5500
 
 type HeroCarouselProps = {
   slides: React.ReactNode[]
+  tones?: HeroTone[]
 }
 
-export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides }) => {
+export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, tones }) => {
   const [active, setActive] = useState(0)
 
   const timeRef = useRef<number | null>(null)
   const count = slides.length
+
+  const tone = tones?.[active] ?? 'dark'
+
+  useEffect(() => {
+    document.documentElement.dataset.heroTone = tone
+  }, [tone])
+
+  useEffect(() => {
+    return () => {
+      delete document.documentElement.dataset.heroTone
+    }
+  }, [])
 
   const stop = useCallback(() => {
     if (timeRef.current !== null) {

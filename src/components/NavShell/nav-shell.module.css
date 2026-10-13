@@ -49,6 +49,11 @@
     color: var(--color-text);
     cursor: pointer;
     flex-shrink: 0;
+    transition: color 0.4s;
+}
+
+:global(html[data-hero-tone="light"]) .nav:not([data-solid="true"]):not([data-open="true"]) .burger {
+    color: var(--color-bg);
 }
 
 .burgerLine {
