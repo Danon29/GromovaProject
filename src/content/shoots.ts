@@ -9,6 +9,7 @@ const secondDir = 'nastya'
 const thirdDir = 'blue-event'
 const fourthDir = 'karina-piter'
 const fifthDir = 'karina-home'
+const sixth = 'china'
 
 export const shoots = [
   {
@@ -107,6 +108,40 @@ export const shoots = [
       photo(thirdDir, 2, 'Две девушки'),
       photo(thirdDir, 3, 'Девушки смотрят вверх'),
       photo(thirdDir, 4, 'Много девушек'),
+    ],
+  },
+  {
+    slug: 'china',
+    category: 'travel',
+    title: 'Путешествие в Китай',
+    year: 2026,
+    location: 'Китай · Пекин',
+    description: 'Прекрасный Китай и его виды',
+    cover: photo(sixth, 2, 'Китайская стена'),
+    photos: [
+      photo(sixth, 1, 'Вид на китайскую стену'),
+      photo(sixth, 2, 'Вид на китайскую стену 2'),
+      photo(sixth, 3, 'Вид на китайскую стену 3'),
+      photo(sixth, 4, 'Вид на китайскую стену 4'),
+      photo(sixth, 5, 'Вид на китайскую стену 5'),
+      photo(sixth, 6, 'Китайский храм'),
+      photo(sixth, 7, 'Запретный город'),
+      photo(sixth, 8, 'Пекин'),
+      photo(sixth, 9, 'Пекин 2'),
+      photo(sixth, 10, 'Китайский храм 2'),
+      photo(sixth, 11, 'Китайский храм 3'),
+      photo(sixth, 12, 'Пекин 3'),
+      photo(sixth, 13, 'Пекин 4'),
+      photo(sixth, 14, 'Китайский храм 4'),
+      photo(sixth, 15, 'Мария на фоне китайских гор'),
+      photo(sixth, 16, 'Ручей'),
+      photo(sixth, 17, 'Китайский храм 5'),
+      photo(sixth, 18, 'Китайский храм 6'),
+      photo(sixth, 19, 'Китайский храм 7'),
+      photo(sixth, 20, 'Китайский храм 8'),
+      photo(sixth, 21, 'Китайское шоссе'),
+      photo(sixth, 22, 'Хогвартс'),
+      photo(sixth, 23, 'Улица с фонарями'),
     ],
   },
 ] as const satisfies readonly Shoot[]

@@ -5,11 +5,12 @@ export type Photo = {
   height: number
 }
 
-export type ShootCategory = 'portrait' | 'event'
+export type ShootCategory = 'portrait' | 'event' | 'travel'
 
 export const ShootCategoryName: Record<ShootCategory, string> = {
   portrait: 'Портрет',
   event: 'Мероприятие',
+  travel: 'Путешествие',
 }
 
 export type Shoot = {

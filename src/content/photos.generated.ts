@@ -16,6 +16,98 @@ export const photoDimensions = {
     "width": 3000,
     "height": 2000
   },
+  "/photos/china/01.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/02.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/03.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/04.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/05.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/06.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/07.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/08.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/09.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/10.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/11.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/12.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/13.jpg": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/photos/china/14.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/15.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/16.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/17.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/18.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/19.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/20.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/21.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
+  "/photos/china/22.jpg": {
+    "width": 3000,
+    "height": 2044
+  },
+  "/photos/china/23.jpg": {
+    "width": 3000,
+    "height": 2250
+  },
   "/photos/hero/first.jpg": {
     "width": 3000,
     "height": 2250
