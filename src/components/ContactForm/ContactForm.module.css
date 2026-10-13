@@ -38,6 +38,13 @@
     resize: none;
 }
 
+.formError {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    color: #e0a089;
+}
+
 .formButton {
     margin-top: 8px;
     align-self: flex-start;

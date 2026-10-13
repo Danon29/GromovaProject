@@ -25,19 +25,48 @@ export default function ContactForm() {
     )
   }
 
+  const errors = state.errors ?? {}
+  const values = state.values
+
   return (
     <form className={styles.contactForm} action={formAction}>
       <label className={styles.formLabel}>
         <span className={styles.formSpan}>Как вас зовут</span>
-        <input type="text" name="name" required placeholder="Имя" className={styles.formInput} />
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="Имя"
+          className={styles.formInput}
+          defaultValue={values?.name}
+          aria-invalid={errors.name ? true : undefined}
+        />
+        {errors.name && <span className={styles.formError}>{errors.name}</span>}
       </label>
       <label className={styles.formLabel}>
         <span className={styles.formSpan}>E-mail или телефон</span>
-        <input type="text" name="contact" required placeholder="Контакт для связи" className={styles.formInput} />
+        <input
+          type="text"
+          name="contact"
+          required
+          placeholder="Контакт для связи"
+          className={styles.formInput}
+          defaultValue={values?.contact}
+          aria-invalid={errors.contact ? true : undefined}
+        />
+        {errors.contact && <span className={styles.formError}>{errors.contact}</span>}
       </label>
       <label className={styles.formLabel}>
         <span className={styles.formSpan}>О съёмке</span>
-        <textarea name="message" placeholder="Событие, дата, идея..." className={styles.formArea} rows={3} />
+        <textarea
+          name="message"
+          placeholder="Событие, дата, идея..."
+          className={styles.formArea}
+          rows={3}
+          defaultValue={values?.message}
+          aria-invalid={errors.message ? true : undefined}
+        />
+        {errors.message && <span className={styles.formError}>{errors.message}</span>}
       </label>
       <div aria-hidden={true} className={styles.trap}>
         <input name="website" tabIndex={-1} autoComplete="off" />
